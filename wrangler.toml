@@ -1,0 +1,6 @@
+name = "avaliacao-github-actions"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "oauth-sessions-pedro"
+database_id = "9e8733b3-1ab4-40f7-aecf-055be7a88a14"
