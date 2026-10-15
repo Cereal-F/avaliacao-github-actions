@@ -124,7 +124,14 @@ Trecho do log:
 
 - Merge sem alteração em migrations/:
 
-(a obter informação)
+https://github.com/Cereal-F/avaliacao-github-actions/pull/11
+
+O PR alterou apenas o arquivo AVALIACAO.md. Como não houve alterações na pasta migrations/, o workflow migrar não foi executado. Isso confirma que o filtro:
+
+paths:
+  - 'migrations/**'
+
+está funcionando corretamente.
 
 Observação:
 
