@@ -126,12 +126,14 @@ Trecho do log:
 
 https://github.com/Cereal-F/avaliacao-github-actions/pull/11
 
-O PR alterou apenas o arquivo AVALIACAO.md. Como não houve alterações na pasta migrations/, o workflow migrar não foi executado. Isso confirma que o filtro:
+O PR alterou apenas o arquivo `AVALIACAO.md`. Como não houve alterações na pasta `migrations/`, o workflow `migrar` não foi executado. Isso confirma que o filtro:
 
+```yaml
 paths:
   - 'migrations/**'
+```
 
-está funcionando corretamente.
+está funcionando corretame**e.
 
 Observação:
 
@@ -142,27 +144,27 @@ paths:
   - 'migrations/**'
 ```
 
-Portanto, ele só executa q**ndo existem alterações na pasta `**grations`.
+Portanto, ele só executa quando existem alterações na pasta `migrations`.
 
 ---
 
 ## Perguntas
 
-##**1.
+### 1.
 
-O arquivo `ci.yml` executa du** vezes porque está associado aos **entos `push` e `pull_request`. Qu**do existe um Pull Request aberto **ocorre um push na branch correspo**ente, ambos os eventos são dispar**os. O status check considerado pe** proteção da branch principal é o**tatus gerado para o Pull Request,**ois é ele que precisa ser aprovad**para permitir o merge.
+O arquivo `ci.yml` executa duas vezes porque está associado aos eventos `push` e `pull_request`. Quando existe um Pull Request aberto e ocorre um push na branch correspondente, ambos os eventos são disparados. O status check considerado pela proteção da branch principal é o status gerado para o Pull Request, pois é ele que precisa ser aprovado para permitir o merge.
 
 ### 2.
 
-P**l Requests vindos de forks não re**bem acesso aos secrets do reposit**io por questões de segurança. Ess**regra impede que um usuário malic**so modifique um workflow para exi**r ou transmitir tokens, senhas e **tras credenciais armazenadas nos **crets do projeto.
+Pull Requests vindos de forks não recebem acesso aos secrets do repositório por questões de segurança. Essa regra impede que um usuário malicioso modifique um workflow para exibir ou transmitir tokens, senhas e outras credenciais armazenadas nos secrets do projeto.
 
 ### 3.
 
-O work**ow declara permissões explicitame**e para aplicar o princípio do men** privilégio. Dessa forma, o `GITH**_TOKEN` recebe apenas os acessos **cessários para executar a tarefa,**eduzindo riscos de segurança e li**tando os impactos de configuraçõe**incorretas.
+O workflow declara permissões explicitamente para aplicar o princípio do menor privilégio. Dessa forma, o `GITHUB_TOKEN` recebe apenas os acessos necessários para executar a tarefa, reduzindo riscos de segurança e limitando os impactos de configurações incorretas.
 
 ### 4.
 
-Não. A revis** por IA pode auxiliar na identificação de problemas, mas não garante que todos os erros sejam encontrados. Durante a atividade foi observado que a IA produziu comentários genéricos, como "Nenhum problema crítico encontrado", demonstrando que ela pode deixar passar problemas ou produzir análises pouco detalhadas. Por isso, a revisão por IA complementa, mas não substitui os status checks obrigatórios e a revisão humana.
+Não. A revisão por IA pode auxiliar na identificação de problemas, mas não garante que todos os erros sejam encontrados. Durante a atividade foi observado que a IA produziu comentários genéricos, como "Nenhum problema crítico encontrado", demonstrando que ela pode deixar passar problemas ou produzir análises pouco detalhadas. Por isso, a revisão por IA complementa, mas não substitui os status checks obrigatórios e a revisão humana.
 
 ---
 
@@ -191,5 +193,4 @@ Principais verificações realizadas:
 Nenhum problema crítico encontrado.
 ```
 
-O resumo foi gerado automaticamente utilizando a variável
-`$GITHUB_STEP_SUMMARY` durante a execução do workflow.
+O resumo foi gerado automaticamente utilizando a variável `$GITHUB_STEP_SUMMARY` durante a execução do workflow.
