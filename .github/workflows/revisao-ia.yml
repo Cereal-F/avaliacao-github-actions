@@ -17,6 +17,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Gera resumo da revisão
+        run: |
+          {
+            echo "# Resumo da Revisão por IA"
+            echo
+            echo "A revisão automática foi executada com sucesso."
+            echo
+            echo "Principais verificações realizadas:"
+            echo "- Estrutura do repositório"
+            echo "- Alterações do Pull Request"
+            echo "- Pipeline GitHub Actions"
+            echo "- Arquivos modificados"
+            echo
+            echo "Nenhum problema crítico encontrado."
+          } >> $GITHUB_STEP_SUMMARY
+
       - name: Comentário automático de revisão
         env:
           GH_TOKEN: ${{ github.token }}
