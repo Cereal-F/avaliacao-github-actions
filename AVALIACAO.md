@@ -168,4 +168,28 @@ Não. A revis** por IA pode auxiliar na identificação de problemas, mas não g
 
 ## Bônus — Resumo por IA no GITHUB_STEP_SUMMARY
 
-(a obter informação)
+Implementado no workflow `revisao-ia`.
+
+Execução:
+
+https://github.com/Cereal-F/avaliacao-github-actions/actions/runs/38661793226
+
+Conteúdo exibido na aba Summary:
+
+```text
+Resumo da Revisão por IA
+
+A revisão automática foi executada com sucesso.
+
+Principais verificações realizadas:
+
+- Estrutura do repositório
+- Alterações do Pull Request
+- Pipeline GitHub Actions
+- Arquivos modificados
+
+Nenhum problema crítico encontrado.
+```
+
+O resumo foi gerado automaticamente utilizando a variável
+`$GITHUB_STEP_SUMMARY` durante a execução do workflow.
